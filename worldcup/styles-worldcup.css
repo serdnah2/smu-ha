@@ -1,0 +1,68 @@
+/* TABS FILTERS */
+.worldcup .leaderboard-layout .tab-panel__item--active{
+  color: #A53AB3;
+  border-bottom: 4px solid #A53AB3;;
+}
+
+/* LEADERBOARD */
+.worldcup .leaderboard-layout {
+  padding: 180px 0 40px 0 !important;
+}
+
+.worldcup .leaderboard-layout::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  height: 290px;
+  right: 0;
+  z-index: -1;
+  background: url('assets/cancha_top.jpg') no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.worldcup .leaderboard-list__item--highlighted {
+  background-color: #A53AB3;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 148px 74px;
+  box-shadow: none;
+  border: none;
+}
+
+.worldcup .leaderboard-layout .feed-tabs-filter__button--filters-applied {
+  background: #A53AB3 !important;
+}
+
+.worldcup .leaderboard-list__item-position {
+  background: none;
+  color: #438111;
+}
+
+.worldcup .leaderboard-list__item--highlighted .leaderboard-list__item-position {
+  border-bottom: none;
+  color: white;
+}
+
+.worldcup .leaderboard-list__item--highlighted::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  background: #A53AB3;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.worldcup .leaderboard-list__item--highlighted .top-star-item .avatar-media__body .heading, .worldcup .leaderboard-list__item--highlighted .avatar-media__user-job {
+  color: white;
+}
+
+.worldcup .leaderboard-layout .suite-panel {
+  border: 0 !important;
+}
+
+.worldcup .leaderboard-layout .leaderboard-list {
+  box-shadow: 0 1px 5px rgba(0,0,0, 0.2);;
+}

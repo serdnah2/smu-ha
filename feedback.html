@@ -1068,115 +1068,146 @@
                                   <span class="font-rubik text-sm font-normal text-blue">Get suggested talking points</span>
                                 </button>
                               </div>
-                            </div>
-                          </div>
-                          <hr class="suite-ui-divider smu-ha-cards-line-dividier">
-                          <div id="smu-ha-cards">
-                            <span class="mb-5 block text-base text-shark font-rubik font-medium leading-4" id="one-on-one-detail-content-action-items-title">Results</span>
-                            <div class="group flex w-full items-start space-x-2 animate-fadeIn">
-                              <span class="flex-grow text-sm text-shark cursor-pointer font-openSans leading-5">Take a moment to review the cards of both sides and then talk to your leader / glober what actions to take.</span>
-                            </div>
-                            <div class="flex w-full flex-col items-start space-y-4">
-                              <div class="smu-ha-cards-wrapper">
-                                <div class="smu-ha-board smu-ha-board-final-step">
-                                  <div class="smu-ha-leads-container">
-                                    <div class="smu-ha-leads-wrapper">
-                                      <div class="smu-ha-leads-title">Leader</div>
-                                      <div class="smu-ha-leads-content">
-                                        <div class="smu-ha-leads-content-image">
-                                          <div class="smu-ha-leads-content-image-wrapper">
-                                            <a class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full cursor-pointer hover:underline" style="height: 32px; width: 32px;">
-                                              <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/jLrkCg0sKx_png/40/40/1">
-                                            </a>
-                                          </div>
+
+                              <div id="smu-ha-cards">
+                                <div class="smu-ha-cards-wrapper">
+                                  <div class="smu-ha-cards">
+                                    <div class="smu-ha-cards-item">
+                                      <div class="smu-ha-cards-item-title">Behaviors</div>
+                                      <div class="smu-ha-cards-item-chooser">
+                                        <div class="smu-ha-cards-item-chooser-card-arrow-left smu-ha-cards-item-chooser-card-arrow" onclick="prevCard('behavior')">
+                                          <img src="static/media/arrow-left.png" alt="left direction">
                                         </div>
-                                        <div class="smu-ha-leads-content-info">
-                                          <div class="smu-ha-leads-content-name">
-                                            <a class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer hover:underline">Carlos Andrés Cataño Posada</a>
-                                          </div>
-                                          <div class="smu-ha-leads-content-role">
-                                            <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
-                                          </div>
+                                        <div class="smu-ha-cards-item-chooser-card" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                          <div class="smu-ha-cards-item-choose visible" data-id="behavior-1" draggable="true" id="behavior-1" data-action="behavior">Behavior 1</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="behavior-2" draggable="true" id="behavior-2" data-action="behavior">Behavior 2</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="behavior-3" draggable="true" id="behavior-3" data-action="behavior">Behavior 3</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="behavior-4" draggable="true" id="behavior-4" data-action="behavior">Behavior 4</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="behavior-5" draggable="true" id="behavior-5" data-action="behavior">Behavior 5</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="behavior-6" draggable="true" id="behavior-6" data-action="behavior">Behavior 6</div>
+                                        </div>
+                                        <div class="smu-ha-cards-item-chooser-card-arrow-right smu-ha-cards-item-chooser-card-arrow" onclick="nextCard('behavior')">
+                                          <img src="static/media/arrow-right.png" alt="right direction">
                                         </div>
                                       </div>
+                                      <div class="smu-ha-selector">
+                                        <select class="smu-ha-selector-input" id="behavior-selector" onchange="selectorUpdated(event, 'behavior')">
+                                          <option value="behavior-1">Behavior 1</option>
+                                          <option value="behavior-2">Behavior 2</option>
+                                          <option value="behavior-3">Behavior 3</option>
+                                          <option value="behavior-4">Behavior 4</option>
+                                          <option value="behavior-5">Behavior 5</option>
+                                          <option value="behavior-6">Behavior 6</option>
+                                        </select>
+                                      </div>
                                     </div>
-                                    <div class="smu-ha-leads-wrapper">
-                                      <div class="smu-ha-leads-title">Glober / mentee</div>
-                                      <div class="smu-ha-leads-content">
-                                        <div class="smu-ha-leads-content-image">
-                                          <div class="smu-ha-leads-content-image-wrapper">
-                                            <a class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full cursor-pointer hover:underline" style="height: 32px; width: 32px;">
-                                              <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/erlitjvupgnvmdqecllp_jpg/52/52/1">
-                                            </a>
-                                          </div>
+                                    <div class="smu-ha-cards-item">
+                                      <div class="smu-ha-cards-item-title smu-ha-cards-item-title-emotion">Emotion</div>
+                                      <div class="smu-ha-cards-item-chooser">
+                                        <div class="smu-ha-cards-item-chooser-card-arrow-left smu-ha-cards-item-chooser-card-arrow">
+                                          <img src="static/media/arrow-left.png" alt="left direction" onclick="prevCard('emotion')">
                                         </div>
-                                        <div class="smu-ha-leads-content-info">
-                                          <div class="smu-ha-leads-content-name">
-                                            <a class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer hover:underline">Daniel Jaramillo Bustamante</a>
-                                          </div>
-                                          <div class="smu-ha-leads-content-role">
-                                            <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
-                                          </div>
+                                        <div class="smu-ha-cards-item-chooser-card" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                          <div class="smu-ha-cards-item-choose visible" data-id="emotion-1" draggable="true" id="emotion-1" data-action="emotion">Emotion 1</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="emotion-2" draggable="true" id="emotion-2" data-action="emotion">Emotion 2</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="emotion-3" draggable="true" id="emotion-3" data-action="emotion">Emotion 3</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="emotion-4" draggable="true" id="emotion-4" data-action="emotion">Emotion 4</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="emotion-5" draggable="true" id="emotion-5" data-action="emotion">Emotion 5</div>
+                                          <div class="smu-ha-cards-item-choose" data-id="emotion-6" draggable="true" id="emotion-6" data-action="emotion">Emotion 6</div>
                                         </div>
+                                        <div class="smu-ha-cards-item-chooser-card-arrow-right smu-ha-cards-item-chooser-card-arrow">
+                                          <img src="static/media/arrow-right.png" alt="right direction" onclick="nextCard('emotion')">
+                                        </div>
+                                      </div>
+                                      <div class="smu-ha-selector">
+                                        <select class="smu-ha-selector-input" id="emotion-selector" onchange="selectorUpdated(event, 'emotion')">
+                                          <option value="emotion-1">Emotion 1</option>
+                                          <option value="emotion-2">Emotion 2</option>
+                                          <option value="emotion-3">Emotion 3</option>
+                                          <option value="emotion-4">Emotion 4</option>
+                                          <option value="emotion-5">Emotion 5</option>
+                                          <option value="emotion-6">Emotion 6</option>
+                                        </select>
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="smu-ha-boards-container smu-ha-boards-container-final-step">
-                                    <div class="smu-ha-board-wrapper">
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/like.png" /> What's working?
+                                  <div class="smu-ha-board">
+                                    <div class="smu-ha-leads-container">
+                                      <div class="smu-ha-leads-wrapper">
+                                        <div class="smu-ha-leads-title">Leader</div>
+                                        <div class="smu-ha-leads-content">
+                                          <div class="smu-ha-leads-content-image">
+                                            <div class="smu-ha-leads-content-image-wrapper">
+                                              <a class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full cursor-pointer hover:underline" style="height: 32px; width: 32px;">
+                                                <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/jLrkCg0sKx_png/40/40/1">
+                                              </a>
+                                            </div>
+                                          </div>
+                                          <div class="smu-ha-leads-content-info">
+                                            <div class="smu-ha-leads-content-name">
+                                              <a class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer hover:underline">Carlos Andrés Cataño Posada</a>
+                                            </div>
+                                            <div class="smu-ha-leads-content-role">
+                                              <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="smu-ha-board-item-content behavior" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                       </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/heart.png" /> How you feel about it?
+                                      <div class="smu-ha-leads-wrapper smu-ha-leads-wrapper-disabled">
+                                        <div class="smu-ha-leads-title">Glober / mentee</div>
+                                        <div class="smu-ha-leads-content">
+                                          <div class="smu-ha-leads-content-image">
+                                            <div class="smu-ha-leads-content-image-wrapper">
+                                              <a class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full cursor-pointer hover:underline" style="height: 32px; width: 32px;">
+                                                <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/erlitjvupgnvmdqecllp_jpg/52/52/1">
+                                              </a>
+                                            </div>
+                                          </div>
+                                          <div class="smu-ha-leads-content-info">
+                                            <div class="smu-ha-leads-content-name">
+                                              <a class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer hover:underline">Daniel Jaramillo Bustamante</a>
+                                            </div>
+                                            <div class="smu-ha-leads-content-role">
+                                              <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="smu-ha-board-item-content emotion" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                      </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/like.png" /> What's working?
-                                        </div>
-                                        <div class="smu-ha-board-item-content behavior" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                      </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/heart.png" /> How you feel about it?
-                                        </div>
-                                        <div class="smu-ha-board-item-content emotion" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                       </div>
                                     </div>
-                                    <div class="smu-ha-board-wrapper">
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/like.png" class="rotate-icon"/> What's not working?
+                                    <div class="smu-ha-boards-container">
+                                      <div class="smu-ha-board-wrapper">
+                                        <div class="smu-ha-board-item">
+                                          <div class="smu-ha-board-item-title">
+                                            <img src="static/media/like.png" /> What's working?
+                                          </div>
+                                          <div class="smu-ha-board-item-content behavior" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                         </div>
-                                        <div class="smu-ha-board-item-content behavior" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                        <div class="smu-ha-board-item">
+                                          <div class="smu-ha-board-item-title">
+                                            <img src="static/media/heart.png" /> How you feel about it?
+                                          </div>
+                                          <div class="smu-ha-board-item-content emotion" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                        </div>
                                       </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/heart.png"/> How you feel about it?
+                                      <div class="smu-ha-board-wrapper">
+                                        <div class="smu-ha-board-item">
+                                          <div class="smu-ha-board-item-title">
+                                            <img src="static/media/like.png" class="rotate-icon"/> What's not working?
+                                          </div>
+                                          <div class="smu-ha-board-item-content behavior"></div>
                                         </div>
-                                        <div class="smu-ha-board-item-content emotion" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                      </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/like.png" class="rotate-icon"/> What's not working?
+                                        <div class="smu-ha-board-item">
+                                          <div class="smu-ha-board-item-title">
+                                            <img src="static/media/heart.png"/> How you feel about it?
+                                          </div>
+                                          <div class="smu-ha-board-item-content emotion"></div>
                                         </div>
-                                        <div class="smu-ha-board-item-content behavior" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                      </div>
-                                      <div class="smu-ha-board-item">
-                                        <div class="smu-ha-board-item-title">
-                                          <img src="static/media/heart.png"/> How you feel about it?
-                                        </div>
-                                        <div class="smu-ha-board-item-content emotion" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+
                             </div>
                           </div>
                           <hr class="suite-ui-divider">
@@ -1244,7 +1275,7 @@
                             <span class="inline-block cursor-pointer text-sm text-dodger font-openSans leading-5">+ Add private notes</span>
                             <div class="flex flex-none space-x-2 justify-end">
                               <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue button-v2--variant-outline" onclick="nextPage('index.html')">Cancel</button>
-                              <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue" onclick="nextPage('index.html')">Continue</button>
+                              <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue" onclick="nextPage('final.html')">Continue</button>
                             </div>
                           </div>
                         </div>
@@ -1276,6 +1307,17 @@
                       </div>
                     </div>
                   </div>
+                  <!--
+                    <div class="smu-ha-timeline">
+                      <div class="smu-ha-timeline-times-wrapper">
+                        <div class="smu-ha-timeline-times-wrapper-time">1</div>
+                        <div class="smu-ha-timeline-times-wrapper-time selected">2</div>
+                        <div class="smu-ha-timeline-times-wrapper-time">3</div>
+                        <div class="smu-ha-timeline-times-wrapper-time">4</div>
+                        <div class="smu-ha-timeline-line"></div>
+                      </div>
+                    </div>
+                  -->
                 </div>
               </div>
             </div>

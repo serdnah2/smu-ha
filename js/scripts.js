@@ -26,22 +26,19 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function drop(ev) {
+function drop(ev, el) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text/plain");
   var cartDropped = document.getElementById(data);
   var dataAction = cartDropped.getAttribute('data-action');
   var isCardsPanel = ev.target.className.includes('smu-ha-cards-item-chooser-card') || (ev.target.getAttribute('draggable') && ev.target.parentElement.className.includes('smu-ha-cards-item-chooser-card'));
   var optionSelected = document.querySelector(`[value="${data}"]`);
+
   if (
-    ev.target.className.includes(dataAction) ||
+    el.className.includes(dataAction) ||
     isCardsPanel
-) {
-    if (ev.target.getAttribute('draggable')) {
-      ev.target.parentElement.appendChild(cartDropped);
-    } else {
-      ev.target.appendChild(cartDropped);
-    }
+  ) {
+    el.appendChild(cartDropped);
 
     if (isCardsPanel) {
       optionSelected.removeAttribute('disabled');
@@ -63,10 +60,14 @@ function drop(ev) {
 function changeHandler(event) {
   if (event.target.checked) {
     cardsWrapper.classList.add('smu-ha-visible');
-    cardsWrapperLineDividier.classList.add('smu-ha-visible')
+    if (cardsWrapperLineDividier) {
+      cardsWrapperLineDividier.classList.add('smu-ha-visible');
+    }
   } else {
     cardsWrapper.classList.remove('smu-ha-visible');
-    cardsWrapperLineDividier.classList.remove('smu-ha-visible')
+    if (cardsWrapperLineDividier) {
+      cardsWrapperLineDividier.classList.remove('smu-ha-visible')
+    }
   }
 }
 

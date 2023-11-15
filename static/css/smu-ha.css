@@ -9,6 +9,7 @@
   --gray-color-selector-text: #c5c1c1;
   --gray-color-border: #eee9e9;
   --gray-color-card-dark: #c4c4c4;
+  --neutrals-mid-grey: #DEE0ED;
   --pink-color: #ff3fbf;
   --primary-dark-blue: #14145a;
   --black-color: #000;
@@ -89,7 +90,7 @@
 }
 
 .smu-ha-cards {
-  width: 200px;
+  width: 217px;
   border-radius: 10px;
   border: 1px solid var(--gray-color-ligth);
   background: var(--white-color);
@@ -139,25 +140,59 @@
   position: relative;
 }
 
+.smu-ha-cards-item-choose-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  padding: 0!important;
+}
+
+.smu-ha-cards-item-choose-heading {
+  color: var(--neutrals-black);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 .smu-ha-cards-item-chooser-card {
-  width: 127px;
-  height: 170px;
+  width: 136px;
+  height: 182px;
   border-radius: 6px;
-  background: var(--gray-color);
   position: relative;
+  margin: 0 9px;
 }
 
 .smu-ha-cards-item-chooser-card .smu-ha-cards-item-choose {
-    width: 127px;
-    height: 170px;
+    width: 136px;
+    height: 182px;
     border-radius: 6px;
-    background: var(--gray-color);
+    background: var(--white-color);
     position: absolute;
     top: 0;
     padding: 12px;
     text-align: center;
     display: none;
     cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid var(--neutrals-mid-grey);
+}
+
+.smu-ha-cards-item-chooser-card .smu-ha-cards-item-choose[data-action="emotion"] {
+  background: rgb(140 39 231 / 10%);
+}
+
+.smu-ha-cards-item-chooser-card .smu-ha-cards-item-choose .smu-ha-cards-item-choose-item img {
+  height: 98px;
+}
+
+.smu-ha-cards-item-chooser-card .smu-ha-cards-item-choose[data-action="emotion"] .smu-ha-cards-item-choose-item img {
+  height: 58px;
 }
 
 .smu-ha-cards-item-choose.visible {
@@ -168,7 +203,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 21px;
+  width: 23px;
   height: 22px;
   cursor: pointer;
 }
@@ -279,7 +314,7 @@
 .smu-ha-boards-container {
     display: flex;
     width: 100%;
-    gap: 27px;
+    gap: 78px;
 }
 
 .smu-ha-boards-container.smu-ha-boards-container-final-step {
@@ -335,20 +370,14 @@
   display: grid;
 }
 
-.smu-ha-board-item-content div:nth-child(1),
-.smu-ha-board-item-content div:nth-child(2),
-.smu-ha-board-item-content div:nth-child(3) {
+.smu-ha-board-item-content .smu-ha-cards-item-choose:nth-child(1),
+.smu-ha-board-item-content .smu-ha-cards-item-choose:nth-child(2),
+.smu-ha-board-item-content .smu-ha-cards-item-choose:nth-child(3) {
   margin-top: 0;
 }
 
-.smu-ha-board-item-content div:nth-child(4),
-.smu-ha-board-item-content div:nth-child(5),
-.smu-ha-board-item-content div:nth-child(6) {
-  background: var(--gray-color-card-dark);
-}
-
-.smu-ha-board-item-content div {
-  background: var(--gray-color);
+.smu-ha-board-item-content .smu-ha-cards-item-choose {
+  background: var(--white-color);
   height: 109px;
   margin-top: calc(-132px + 25px);
   border-radius: 6px;
@@ -359,7 +388,24 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-top: 8px;
+  border: 1px solid var(--neutrals-mid-grey);
+}
+
+.smu-ha-board-item-content .smu-ha-cards-item-choose .smu-ha-cards-item-choose-item .smu-ha-cards-item-choose-heading {
+  color: var(--neutrals-black);
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.smu-ha-board-item-content .smu-ha-cards-item-choose[data-action="emotion"] .smu-ha-cards-item-choose-item {
+  background: rgb(140 39 231 / 10%);
+}
+
+.smu-ha-board-item-content .smu-ha-cards-item-choose .smu-ha-cards-item-choose-item img {
+  height: 62px;
 }
 
 .smu-ha-switch-wrapper {
@@ -398,7 +444,7 @@
 
 .smu-ha-details-category-description {
     color: var(--pink-color);
-    font-family: Roboto;
+    font-family: var(--font-family);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -420,7 +466,7 @@
 
 .smu-ha-previous-selection-text {
     color: var(--neutrals-black);
-    font-family: Roboto;
+    font-family: var(--font-family);
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -441,6 +487,10 @@
     line-height: normal;
     padding: 12px;
     margin-left: 15px;
+}
+
+#one-on-one-detail-sidebar {
+  display: none;
 }
 
 /* switch */

@@ -254,15 +254,19 @@
 
 .smu-ha-leads-container {
   display: flex;
-  gap: 80px;
+  gap: 260px;
 }
 
 .smu-ha-leads-wrapper {
-  flex: 1;
+  flex: 0;
 }
 
 .smu-ha-leads-wrapper-disabled {
   opacity: .5;
+}
+
+.smu-ha-board.smu-ha-board-final-step .smu-ha-leads-wrapper {
+  flex: 1;
 }
 
 .smu-ha-leads-title {

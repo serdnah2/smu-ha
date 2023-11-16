@@ -953,7 +953,8 @@
                       <div class="bg-white rounded-lg shadow-base flex-grow overflow-auto" id="one-on-one-home-people-list">
                         <div class="flex h-16 items-center justify-between px-6">
                           <span class="text-sm text-blue font-rubik font-medium leading-4">People list</span>
-                          <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue button-v2--with-icon button-v2--end-icon" id="one-on-one-home-people-list-button">+ New <span class="ui-components-icon ui-component-icon ui-components-icon_triangle-down ui-component-icon_9  ui-component-icon_white  " name="triangle-down" role="presentation" style="font-size: 9px;"></span>
+                          <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue button-v2--with-icon button-v2--end-icon" onclick="openFeedbackPopUp()" id="one-on-one-home-people-list-button">
+                            + New <span class="ui-components-icon ui-component-icon ui-components-icon_triangle-down ui-component-icon_9  ui-component-icon_white" name="triangle-down" role="presentation" style="font-size: 9px;"></span>
                           </button>
                         </div>
                         <hr class="suite-ui-divider">
@@ -1022,7 +1023,7 @@
                                       <div class="mr-1.5 h-2 w-2 rounded-full" style="background-color: rgb(191, 226, 117);"></div>
                                       <span class="text-shark font-rubik text-xs leading-none">Done</span>
                                     </div>
-                                    <a class="text-sm text-shark hover:text-shark ml-[14px] font-openSans leading-5 cursor-pointer hover:underline underline" href="glober/final.html">Fri, Nov 10</a>
+                                    <a class="text-sm text-shark hover:text-shark ml-[14px] font-openSans leading-5 cursor-pointer hover:underline underline" href="final.html">Fri, Nov 10</a>
                                   </div>
                                 </div>
                                 <div class="relative box-border flex items-center px-2.5 text-sm" density="standard" style="flex: 1 0 auto; min-height: 52px; min-width: 195px; width: 218.5px;">
@@ -1128,7 +1129,16 @@
       <div class="app-components_toast-notifications app-components_toast-notifications--hiden app-components_toast-notifications--bottom-left app-components_toast-notifications--black">
         <div class="app-components_toast-notifications__list"></div>
       </div>
-      <div></div>
+      <div id="smu-feedback-pop-up">
+        <div class="smu-ui-menu-popper" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; transform: translate(-585px, 208px);">
+          <div class="smu-ui-menu">
+            <ul class="smu-ui-menu__list" role="menu" tabindex="-1">
+              <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('team')">Create a 1:1 with my team</li>
+              <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('leader')">Request a 1:1 with my leader</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div></div>
       <div></div>
       <div></div>

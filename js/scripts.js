@@ -127,5 +127,18 @@ function openFeedbackPopUp() {
 }
 
 function openModal(modal) {
-  console.log(modal);
+  const modalToOpen = document.querySelector(`#smu-ha-modal-request-${modal}`);
+
+  if (modalToOpen) {
+    modalToOpen.classList.add('opened');
+    openFeedbackPopUp();
+  }
+}
+
+function closeModal(modal) {
+  const modalToClose = document.querySelector(`#smu-ha-modal-request-${modal}`);
+
+  if (modalToClose) {
+    modalToClose.classList.remove('opened');
+  }
 }

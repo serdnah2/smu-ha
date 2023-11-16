@@ -951,11 +951,21 @@
                     </div>
                     <div class="flex items-start space-x-4">
                       <div class="bg-white rounded-lg shadow-base flex-grow overflow-auto" id="one-on-one-home-people-list">
-                        <div class="flex h-16 items-center justify-between px-6">
+                        <div class="flex h-16 items-center justify-between px-6 relative">
                           <span class="text-sm text-blue font-rubik font-medium leading-4">People list</span>
                           <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue button-v2--with-icon button-v2--end-icon" onclick="openFeedbackPopUp()" id="one-on-one-home-people-list-button">
                             + New <span class="ui-components-icon ui-component-icon ui-components-icon_triangle-down ui-component-icon_9  ui-component-icon_white" name="triangle-down" role="presentation" style="font-size: 9px;"></span>
                           </button>
+                          <div id="smu-feedback-pop-up">
+                            <div class="smu-ui-menu-popper" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom-end">
+                              <div class="smu-ui-menu">
+                                <ul class="smu-ui-menu__list" role="menu" tabindex="-1">
+                                  <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('team')">Create a 1:1 with my team</li>
+                                  <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('leader')">Request a 1:1 with my leader</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <hr class="suite-ui-divider">
                         <div class="relative flex grow flex-col overflow-hidden rounded-md" id="one-on-one-home-people-list-table">
@@ -1086,7 +1096,7 @@
                             </div>
                           </div>
                           <footer class="flex min-h-[52px] items-center border-t border-geyser px-2.5">
-                            <span class="block font-rubik text-sm text-blue">1 - 1 of 1</span>
+                            <span class="block font-rubik text-sm text-blue">1 - 2 of 1</span>
                           </footer>
                         </div>
                       </div>
@@ -1129,13 +1139,203 @@
       <div class="app-components_toast-notifications app-components_toast-notifications--hiden app-components_toast-notifications--bottom-left app-components_toast-notifications--black">
         <div class="app-components_toast-notifications__list"></div>
       </div>
-      <div id="smu-feedback-pop-up">
-        <div class="smu-ui-menu-popper" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; transform: translate(-585px, 208px);">
-          <div class="smu-ui-menu">
-            <ul class="smu-ui-menu__list" role="menu" tabindex="-1">
-              <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('team')">Create a 1:1 with my team</li>
-              <li class="smu-ui-menu-item" role="menuitem" tabindex="-1" onclick="openModal('leader')">Request a 1:1 with my leader</li>
-            </ul>
+      <div class="ui-backdrop ui-backdrop--centered ui-backdrop--fixed ui-backdrop--open suite-ui-modal" id="smu-ha-modal-request-leader">
+        <div class="relative">
+          <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('leader')"></span>
+          <div class="bg-white rounded-lg w-[700px]">
+            <div>
+              <div class="flex flex-col p-6">
+                <span class="text-lg text-shark font-rubik font-medium leading-7">Request a 1:1 to your leader</span>
+                <span class="text-sm text-raven font-rubik leading-4">Invite your leader to create a recurring space for meaningful conversations.</span>
+              </div>
+              <hr class="suite-ui-divider" />
+            </div>
+            <form class="space-y-6 p-6">
+              <div class="space-y-3">
+                <span class="text-base text-shark font-rubik font-medium leading-4">Who do you want to meet with?</span>
+                <div class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white" name="toUserUid">
+                  <div class="select-v2__header">
+                    <div class="select-v2__wrapper-values">
+                      <div class="select-v2__placeholder"> Select a leader </div>
+                      <div class="select-v2-search select-v2-search--size-medium">
+                        <textarea aria-autocomplete="list" autocomplete="off" autocorrect="off" class="select-v2-search__input" spellcheck="false" type="text" style="width: 10px; height: 19px"></textarea>
+                        <span class="select-v2-search__text"></span>
+                      </div>
+                    </div>
+                    <div class="select-v2__wrapper-actions">
+                      <div class="select-v2__indicator-divider"></div>
+                      <div class="select-v2__indicator-dropdown">
+                        <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon" name="arrow-down" role="presentation"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex items-center rounded-lg px-4 py-3" style="background-color: rgb(232, 232, 255)">
+                <span class="icon-v2 mr-2 icon-v2--size-medium ui-components-icon_info-fill" name="info-fill" role="presentation" style="color: rgb(75, 78, 255)"></span>
+                <span class="text-sm text-shark font-openSans leading-5">You will be able to see the leadership relationships in the About section of <a class="text-shark hover:text-shark cursor-pointer hover:underline underline" href="https://www.starmeup.com/me" rel="" target="_self">your profile</a>. </span>
+              </div>
+              <div class="flex">
+                <div class="suite-checkbox flex-none suite-checkbox--checked suite-checkbox--variant-square">
+                  <span class="icon-v2 suite-checkbox__icon icon-v2--size-medium ui-components-icon_check" name="check" role="presentation"></span>
+                  <input class="suite-checkbox__input" type="checkbox" id="copyNotification" name="copyNotification" checked="" />
+                </div>
+                <label class="ml-2 text-sm text-shark font-openSans leading-5" for="copyNotification">Email me a copy of this request.</label>
+              </div>
+              <div class="flex justify-end space-x-2">
+                <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue" disabled=""> Request a 1:1 </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="ui-backdrop ui-backdrop--centered ui-backdrop--fixed ui-backdrop--open suite-ui-modal" id="smu-ha-modal-request-team">
+        <div class="relative">
+          <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('team')"></span>
+          <div class="bg-white rounded-lg w-[700px]">
+            <div>
+              <div class="flex flex-col p-6">
+                <span class="text-lg text-shark font-rubik font-medium leading-7">Create a 1:1</span>
+                <span class="text-sm text-raven font-rubik leading-4">Schedule a recurrent time for having meaningful conversations with your team.</span>
+              </div>
+              <hr class="suite-ui-divider" />
+            </div>
+            <div class="space-y-6 p-6">
+              <div class="space-y-3">
+                <span class="text-base text-shark font-rubik font-medium leading-4">Who do you want to meet with?</span>
+                <div class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white" name="toUserUid">
+                  <div class="select-v2__header">
+                    <div class="select-v2__wrapper-values">
+                      <div class="select-v2__placeholder"> Select a collaborator </div>
+                      <div class="select-v2-search select-v2-search--size-medium">
+                        <textarea aria-autocomplete="list" autocomplete="off" autocorrect="off" class="select-v2-search__input" spellcheck="false" type="text" style="width: 10px; height: 19px"></textarea>
+                        <span class="select-v2-search__text"></span>
+                      </div>
+                    </div>
+                    <div class="select-v2__wrapper-actions">
+                      <div class="select-v2__indicator-divider"></div>
+                      <div class="select-v2__indicator-dropdown">
+                        <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon" name="arrow-down" role="presentation"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-base text-shark font-rubik font-medium leading-4">Meeting time</span>
+                </div>
+                <div class="flex items-end">
+                  <div class="mr-3 space-y-2">
+                    <span class="text-sm text-raven font-rubik leading-4">Day</span>
+                    <div class="suite-datepicker w-40 suite-datepicker--style-input suite-datepicker--down suite-datepicker--align-right suite-datepicker--size-medium">
+                      <div class="SingleDatePicker SingleDatePicker_1 SingleDatePicker__block SingleDatePicker__block_2">
+                        <div>
+                          <div class="SingleDatePickerInput SingleDatePickerInput_1 SingleDatePickerInput__block SingleDatePickerInput__block_2">
+                            <div class="DateInput DateInput_1 DateInput__block DateInput__block_2">
+                              <input class="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2" aria-label="Select a day" type="text" id="date" name="date" placeholder="Select a day" autocomplete="off" readonly="" aria-describedby="DateInput__screen-reader-message-date" value="" />
+                              <p class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1" id="DateInput__screen-reader-message-date"> Press the down arrow key to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates. </p>
+                            </div>
+                            <button class="SingleDatePickerInput_calendarIcon SingleDatePickerInput_calendarIcon_1" type="button">
+                              <span class="icon-v2 icon-v2--size-20 icon-v2--color-black ui-components-icon_calendar" name="calendar" role="presentation" style="font-size: 20px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mr-1 space-y-2">
+                    <span class="text-sm text-raven font-rubik leading-4">Time</span>
+                    <div class="select-v2 select-v2--is-disabled select-v2--with-ellipsis select-v2--size-medium bg-white !w-24">
+                      <div class="select-v2__header">
+                        <div class="select-v2__wrapper-values">
+                          <div class="select-v2__placeholder">HH:MM</div>
+                        </div>
+                        <div class="select-v2__wrapper-actions"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="mb-3 mr-1 text-sm text-raven font-rubik leading-4">to</span>
+                  <div class="select-v2 select-v2--is-disabled select-v2--with-ellipsis select-v2--size-medium bg-white mr-3 !w-32">
+                    <div class="select-v2__header">
+                      <div class="select-v2__wrapper-values">
+                        <div class="select-v2__placeholder">HH:MM</div>
+                      </div>
+                      <div class="select-v2__wrapper-actions"></div>
+                    </div>
+                  </div>
+                  <div class="flex-1 space-y-2">
+                    <span class="text-sm text-raven font-rubik leading-4">Time Zone</span>
+                    <div class="select-v2 select-v2--with-ellipsis select-v2--with-value select-v2--size-medium bg-white !w-full">
+                      <div class="select-v2__header">
+                        <div class="select-v2__wrapper-values">
+                          <div class="select-v2__placeholder">Select...</div>
+                          <div class="select-v2__single-value"> America/Bogota </div>
+                          <div class="select-v2-search select-v2-search--size-medium">
+                            <textarea aria-autocomplete="list" autocomplete="off" autocorrect="off" class="select-v2-search__input" spellcheck="false" type="text" style="width: 10px; height: 19px"></textarea>
+                            <span class="select-v2-search__text"></span>
+                          </div>
+                        </div>
+                        <div class="select-v2__wrapper-actions">
+                          <div class="select-v2__indicator-divider"></div>
+                          <div class="select-v2__indicator-dropdown">
+                            <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon" name="arrow-down" role="presentation"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex space-x-3">
+                  <div class="space-y-2">
+                    <span class="text-sm text-raven font-rubik leading-4">Recurrence</span>
+                    <div class="select-v2 select-v2--with-ellipsis select-v2--with-value select-v2--size-medium w-40 bg-white" name="frequency.type">
+                      <div class="select-v2__header">
+                        <div class="select-v2__wrapper-values">
+                          <div class="select-v2__placeholder">Select</div>
+                          <div class="select-v2__single-value">Weekly</div>
+                          <div class="select-v2-search select-v2-search--size-medium">
+                            <textarea aria-autocomplete="list" autocomplete="off" autocorrect="off" class="select-v2-search__input" spellcheck="false" type="text" style="width: 10px; height: 19px"></textarea>
+                            <span class="select-v2-search__text"></span>
+                          </div>
+                        </div>
+                        <div class="select-v2__wrapper-actions">
+                          <div class="select-v2__indicator-divider"></div>
+                          <div class="select-v2__indicator-dropdown">
+                            <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon" name="arrow-down" role="presentation"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <span class="text-sm text-raven font-rubik leading-4">Ends on</span>
+                    <div class="suite-datepicker w-40 suite-datepicker--style-input suite-datepicker--down suite-datepicker--align-right suite-datepicker--size-medium">
+                      <div class="SingleDatePicker SingleDatePicker_1 SingleDatePicker__block SingleDatePicker__block_2">
+                        <div>
+                          <div class="SingleDatePickerInput SingleDatePickerInput_1 SingleDatePickerInput__block SingleDatePickerInput__block_2">
+                            <div class="DateInput DateInput_1 DateInput__block DateInput__block_2">
+                              <input class="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2" aria-label="Select a day" type="text" id="date" name="date" placeholder="Select a day" autocomplete="off" readonly="" aria-describedby="DateInput__screen-reader-message-date" value="" />
+                              <p class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1" id="DateInput__screen-reader-message-date"> Press the down arrow key to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates. </p>
+                            </div>
+                            <button class="SingleDatePickerInput_calendarIcon SingleDatePickerInput_calendarIcon_1" type="button">
+                              <span class="icon-v2 icon-v2--size-20 icon-v2--color-black ui-components-icon_calendar" name="calendar" role="presentation" style="font-size: 20px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex items-center rounded-lg px-4 py-3" style="background-color: rgb(248, 238, 212)">
+                <span class="icon-v2 mr-2 icon-v2--size-medium ui-components-icon_alert-fill" name="alert-fill" role="presentation" style="color: rgb(232, 183, 30)"></span>
+                <span class="text-sm text-shark font-openSans leading-5">Remember that your collaborator's timezone could be different.</span>
+              </div>
+              <div class="flex justify-end space-x-2">
+                <button class="button-v2 button-v2--unification button-v2--size-large button-v2--color-unifyBlue" disabled=""> Save </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

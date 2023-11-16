@@ -524,10 +524,24 @@
 
 #smu-feedback-pop-up {
   display: none;
+  position: absolute;
+  right: 23px;
+  top: 49px;
+  z-index: 1;
 }
 
 #smu-feedback-pop-up.opened {
   display: block;
+}
+
+#smu-ha-modal-request-leader,
+#smu-ha-modal-request-team {
+  display: none;
+}
+
+#smu-ha-modal-request-leader.opened,
+#smu-ha-modal-request-team.opened {
+  display: flex;
 }
 
 /* switch */

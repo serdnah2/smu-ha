@@ -604,3 +604,43 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /* end switch */
+
+/* Modal */
+.smu-ha-modal-container{
+padding: 27px;
+}
+.smu-ha-timeline-times-wrapper{
+  max-width: 462px;
+}
+
+.smu-ha-cards-item{
+  width: 228px;
+  padding-bottom: 42px;
+}
+.smu-ha-modal-check-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+/* -------close--------- */
+
+/* Colors of the line */
+.smu-ha-line-1{
+  width: calc(100% - 34px - 34px);
+  background: var(--gray-color);
+}
+ .smu-ha-line-2{
+  width: calc(50% - 34px);
+  background: var(--primary-color);
+}
+
+.smu-ha-line-1-2, .smu-ha-line-2-2{
+  width: calc(100% - 34px - 34px);
+  background: var(--gray-color);
+}
+
+
+/* ------- close---------- */
+
+

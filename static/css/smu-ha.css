@@ -535,12 +535,16 @@
 }
 
 #smu-ha-modal-request-leader,
-#smu-ha-modal-request-team {
+#smu-ha-modal-request-team,
+#smu-ha-modal-request-categories,
+#smu-ha-modal-request-completed {
   display: none;
 }
 
 #smu-ha-modal-request-leader.opened,
-#smu-ha-modal-request-team.opened {
+#smu-ha-modal-request-team.opened,
+#smu-ha-modal-request-categories.opened,
+#smu-ha-modal-request-completed.opened {
   display: flex;
 }
 
@@ -621,7 +625,8 @@ padding: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 36px;
+  margin-bottom: bac;
+  background: transparent;
 }
 /* -------close--------- */
 

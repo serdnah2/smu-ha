@@ -128,10 +128,19 @@ function openFeedbackPopUp() {
 
 function openModal(modal) {
   const modalToOpen = document.querySelector(`#smu-ha-modal-request-${modal}`);
+  const motelToClose = document.querySelector(`.suite-ui-modal.opened`);
+  const popup = document.querySelector('#smu-feedback-pop-up');
 
   if (modalToOpen) {
     modalToOpen.classList.add('opened');
-    openFeedbackPopUp();
+  }
+
+  if (motelToClose) {
+    motelToClose.classList.remove('opened');
+  }
+
+  if (popup) {
+    popup.classList.remove('opened');
   }
 }
 

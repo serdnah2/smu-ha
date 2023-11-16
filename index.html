@@ -1142,7 +1142,16 @@
       <div class="ui-backdrop ui-backdrop--centered ui-backdrop--fixed ui-backdrop--open suite-ui-modal" id="smu-ha-modal-request-leader">
         <div class="relative">
           <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('leader')"></span>
-          <div class="bg-white rounded-lg w-[700px]">
+          <div class="bg-white rounded-lg w-[700px] smu-ha-modal-container">
+            <div class="smu-ha-timeline">
+              <div class="smu-ha-timeline-times-wrapper">
+                <div class="smu-ha-timeline-times-wrapper-time selected">1</div>
+                <div class="smu-ha-timeline-times-wrapper-time ">2</div>
+                <div class="smu-ha-timeline-times-wrapper-time">3</div>
+                <div class="smu-ha-timeline-line smu-ha-line-1-2"></div>
+                <div class="smu-ha-timeline-line smu-ha-line-2-2"></div>
+              </div>
+            </div>
             <div>
               <div class="flex flex-col p-6">
                 <span class="text-lg text-shark font-rubik font-medium leading-7">Request a 1:1 to your leader</span>
@@ -1150,7 +1159,7 @@
               </div>
               <hr class="suite-ui-divider" />
             </div>
-            <form class="space-y-6 p-6">
+            <div class="space-y-6 p-6">
               <div class="space-y-3">
                 <span class="text-base text-shark font-rubik font-medium leading-4">Who do you want to meet with?</span>
                 <div class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white" name="toUserUid">
@@ -1178,14 +1187,14 @@
               <div class="flex">
                 <div class="suite-checkbox flex-none suite-checkbox--checked suite-checkbox--variant-square">
                   <span class="icon-v2 suite-checkbox__icon icon-v2--size-medium ui-components-icon_check" name="check" role="presentation"></span>
-                  <input class="suite-checkbox__input" type="checkbox" id="copyNotification" name="copyNotification" checked="" />
+                  <input class="suite-checkbox__input" type="checkbox" name="copyNotification" checked="" />
                 </div>
-                <label class="ml-2 text-sm text-shark font-openSans leading-5" for="copyNotification">Email me a copy of this request.</label>
+                <label class="ml-2 text-sm text-shark font-openSans leading-5">Email me a copy of this request.</label>
               </div>
               <div class="flex justify-end space-x-2">
-                <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue" disabled=""> Request a 1:1 </button>
+                <button class="button-v2 button-v2--unification button-v2--size-medium button-v2--color-unifyBlue" onclick="openModal('categories')"> Request a 1:1 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -1193,6 +1202,15 @@
         <div class="relative">
           <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('team')"></span>
           <div class="bg-white rounded-lg w-[700px]">
+            <div class="smu-ha-timeline smu-ha-modal-container">
+              <div class="smu-ha-timeline-times-wrapper">
+                <div class="smu-ha-timeline-times-wrapper-time selected">1</div>
+                <div class="smu-ha-timeline-times-wrapper-time ">2</div>
+                <div class="smu-ha-timeline-times-wrapper-time">3</div>
+                <div class="smu-ha-timeline-line smu-ha-line-1-2"></div>
+                <div class="smu-ha-timeline-line smu-ha-line-2-2"></div>
+              </div>
+            </div>
             <div>
               <div class="flex flex-col p-6">
                 <span class="text-lg text-shark font-rubik font-medium leading-7">Create a 1:1</span>
@@ -1333,7 +1351,145 @@
                 <span class="text-sm text-shark font-openSans leading-5">Remember that your collaborator's timezone could be different.</span>
               </div>
               <div class="flex justify-end space-x-2">
-                <button class="button-v2 button-v2--unification button-v2--size-large button-v2--color-unifyBlue" disabled=""> Save </button>
+                <button class="button-v2 button-v2--unification button-v2--size-large button-v2--color-unifyBlue" onclick="openModal('categories')"> Save </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui-backdrop ui-backdrop--centered ui-backdrop--fixed ui-backdrop--open suite-ui-modal" id="smu-ha-modal-request-categories">
+        <div class="relative">
+          <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('categories')"></span>
+          <div class="bg-white rounded-lg w-[700px]">
+            <div>
+              <div class="smu-ha-timeline">
+                <div class="smu-ha-timeline-times-wrapper smu-ha-modal-container">
+                  <div class="smu-ha-timeline-times-wrapper-time">1</div>
+                  <div class="smu-ha-timeline-times-wrapper-time selected"> 2 </div>
+                  <div class="smu-ha-timeline-times-wrapper-time">3</div>
+                  <div class="smu-ha-timeline-line smu-ha-line-1"></div>
+                  <div class="smu-ha-timeline-line smu-ha-line-2"></div>
+                </div>
+              </div>
+              <div class="flex flex-col p-6">
+                <span class="text-lg text-shark font-rubik font-medium leading-7">Pick a categorie(s) for talking point</span>
+                <span class="text-sm text-raven font-rubik leading-4">You can choose 1 or more categories to add in your talking point</span>
+              </div>
+              <div style="padding: 1px 84px">
+                <div class="transition-all h-auto">
+                  <div class="space-y-6">
+                    <span class="font-rubik font-medium text-shark text-sm">Categories</span>
+                    <div class="flex flex-wrap gap-4" name="categories">
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Personal Development</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Communication</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Belonging</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Remote Work</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Problem Solving</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Job Satisfaction</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Innovation</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Performance</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Recognition</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Work-Life Balance</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Leadership</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Career Development</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Productivity</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Teamwork</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Icebreaker</button>
+                      <button class="whitespace-nowrap rounded-full border py-1.5 px-3 font-openSans text-xs transition-colors border-transparent bg-lavander-light text-blue hover:bg-lavander" type="button"> Other </button>
+                    </div>
+                    <div class="flex items-center justify-between"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col p-6">
+                <div class="smu-ha-board-item-title">
+                  <img src="static/media/heart.png">
+                  <span class="text-lg text-shark font-rubik font-medium leading-7">How you feel about it?</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-center">
+                <div class="smu-ha-cards-item ">
+                  <div class="smu-ha-cards-item-chooser">
+                    <div class="smu-ha-cards-item-chooser-card-arrow-left smu-ha-cards-item-chooser-card-arrow">
+                      <img src="static/media/arrow-left.png" alt="left direction" onclick="prevCard('emotion')">
+                    </div>
+                    <div class="smu-ha-cards-item-chooser-card" onclick="openModal('completed')">
+                      <div class="smu-ha-cards-item-choose visible" data-id="emotion-1" draggable="true" id="emotion-1" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 1</span>
+                          <img src="assets/emotions/emotion-1.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="smu-ha-cards-item-choose" data-id="emotion-2" draggable="true" id="emotion-2" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 2</span>
+                          <img src="assets/emotions/emotion-2.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="smu-ha-cards-item-choose" data-id="emotion-3" draggable="true" id="emotion-3" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 3</span>
+                          <img src="assets/emotions/emotion-3.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="smu-ha-cards-item-choose" data-id="emotion-4" draggable="true" id="emotion-4" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 4</span>
+                          <img src="assets/emotions/emotion-4.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="smu-ha-cards-item-choose" data-id="emotion-5" draggable="true" id="emotion-5" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 5</span>
+                          <img src="assets/emotions/emotion-5.svg" alt="">
+                        </div>
+                      </div>
+                      <div class="smu-ha-cards-item-choose" data-id="emotion-6" draggable="true" id="emotion-6" data-action="emotion">
+                        <div class="smu-ha-cards-item-choose-item">
+                          <span class="smu-ha-cards-item-choose-heading">Emotion 6</span>
+                          <img src="assets/emotions/emotion-6.svg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="smu-ha-cards-item-chooser-card-arrow-right smu-ha-cards-item-chooser-card-arrow">
+                      <img src="static/media/arrow-right.png" alt="right direction" onclick="nextCard('emotion')">
+                    </div>
+                  </div>
+                  <div class="smu-ha-selector">
+                    <select class="smu-ha-selector-input" id="emotion-selector" onchange="selectorUpdated(event, 'emotion')">
+                      <option value="emotion-1">Emotion 1</option>
+                      <option value="emotion-2">Emotion 2</option>
+                      <option value="emotion-3">Emotion 3</option>
+                      <option value="emotion-4">Emotion 4</option>
+                      <option value="emotion-5">Emotion 5</option>
+                      <option value="emotion-6">Emotion 6</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui-backdrop ui-backdrop--centered ui-backdrop--fixed ui-backdrop--open suite-ui-modal" id="smu-ha-modal-request-completed">
+        <div class="relative">
+          <span class="icon-v2 absolute right-3 top-3 cursor-pointer text-blue icon-v2--size-large ui-components-icon_linear-close" name="linear-close" role="presentation" onclick="closeModal('completed')"></span>
+          <div class="bg-white rounded-lg w-[700px]">
+            <div>
+              <div class="smu-ha-timeline">
+                <div class="smu-ha-timeline-times-wrapper smu-ha-modal-container">
+                  <div class="smu-ha-timeline-times-wrapper-time">1</div>
+                  <div class="smu-ha-timeline-times-wrapper-time">2</div>
+                  <div class="smu-ha-timeline-times-wrapper-time selected"> 3 </div>
+                  <div class="smu-ha-timeline-line"></div>
+                </div>
+              </div>
+              <div class="flex flex-col p-6 justify-center">
+                <div class="smu-ha-modal-check-image-wrapper">
+                  <img src="assets/img/vector_check.svg" alt="" />
+                </div>
+                <span class="text-lg text-shark font-rubik font-medium leading-7 text-center">Your 1:1 has been set up</span>
+                <span class="text-sm text-raven font-rubik leading-4 text-center">You can check or modify this request from the 1:1 panel</span>
               </div>
             </div>
           </div>

@@ -117,3 +117,15 @@ function prevCard(chooser) {
 function nextPage(page) {
   window.location.href = page;
 }
+
+function openFeedbackPopUp() {
+  const popup = document.querySelector('#smu-feedback-pop-up');
+
+  if (popup) {
+    popup.classList.toggle('opened');
+  }
+}
+
+function openModal(modal) {
+  console.log(modal);
+}

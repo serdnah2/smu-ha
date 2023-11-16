@@ -522,6 +522,14 @@
   display: none;
 }
 
+#smu-feedback-pop-up {
+  display: none;
+}
+
+#smu-feedback-pop-up.opened {
+  display: block;
+}
+
 /* switch */
 .switch {
   position: relative;

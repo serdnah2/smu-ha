@@ -80,6 +80,10 @@
   width: 100%;
 }
 
+.smu-ha-cards-wrapper-full-width {
+  max-width: 767px;
+}
+
 #smu-ha-cards {
     display: none;
     width: 100%;
@@ -126,7 +130,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-align: center;
+  padding-left: 18px;
 }
 
 .smu-ha-cards-item-title-emotion {
@@ -227,17 +231,21 @@
 
 .smu-ha-selector-input {
   border: 1px solid var(--gray-color-selector);
-  background: var(--white-color);
   appearance: none;
   padding: 6px 9px;
   width: 152px;
   height: 26px;
-  color: var(--gray-color-selector-text);
-  font-family: var(--font-family);
+  color: var(--neutrals-black);
+  font-family: var(
+  --font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border-radius: 15px;
+  background: url('../media/dropdown-arrow.png') no-repeat;
+  background-position-x: 130px;
+  background-position-y: center;
 }
 
 .smu-ha-cards-item + .smu-ha-cards-item {
@@ -246,7 +254,7 @@
 
 .smu-ha-leads-container {
   display: flex;
-  gap: 32px;
+  gap: 80px;
 }
 
 .smu-ha-leads-wrapper {
@@ -476,9 +484,9 @@
 
 .smu-ha-previous-selection-card {
     border-radius: 6px;
-    background: var(--gray-color);
-    width: 70px;
-    height: 94px;
+    background: rgb(140 39 231 / 10%);
+    width: 83px;
+    height: 109px;
     color: var(--primary-dark-blue);
     font-family: var(--font-family);
     font-size: 12px;
@@ -487,6 +495,23 @@
     line-height: normal;
     padding: 12px;
     margin-left: 15px;
+}
+
+.smu-ha-previous-selection-card .smu-ha-cards-item-choose-item .smu-ha-cards-item-choose-heading {
+  color: var(--neutrals-black);
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.smu-ha-previous-selection-card .smu-ha-cards-item-choose-item img {
+  height: 30px;
+}
+
+.smu-ha-boards-container-final-step .smu-ha-board-item-content .smu-ha-cards-item-choose[data-action="emotion"] .smu-ha-cards-item-choose-item img {
+  height: 30px;
 }
 
 #one-on-one-detail-sidebar {

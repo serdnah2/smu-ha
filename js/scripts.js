@@ -31,9 +31,9 @@ function drop(ev, el) {
   var data = ev.dataTransfer.getData("text/plain");
   var cartDropped = document.getElementById(data);
   var dataAction = cartDropped.getAttribute('data-action');
-  var isCardsPanel = ev.target.className.includes('smu-ha-cards-item-chooser-card') || (ev.target.getAttribute('draggable') && ev.target.parentElement.className.includes('smu-ha-cards-item-chooser-card'));
+  var isCardsPanel = el.className.includes('smu-ha-cards-item-chooser-card');
   var optionSelected = document.querySelector(`[value="${data}"]`);
-
+  console.log(el);
   if (
     el.className.includes(dataAction) ||
     isCardsPanel

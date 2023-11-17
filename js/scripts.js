@@ -2,6 +2,11 @@ const cards = document.querySelectorAll(".smu-ha-cards-item-choose");
 const cardsWrapper = document.querySelector('#smu-ha-cards');
 const boardContent = document.querySelector('.smu-ha-board-item-content');
 const cardsWrapperLineDividier = document.querySelector('.smu-ha-cards-line-dividier');
+const categoriesList = document.querySelectorAll('#smu-ha-modal-request-categories div[name="categories"] button');
+const categoryWrapper = document.querySelector('.smu-ha-details-category-description');
+const emotionWrapper = document.querySelector('.smu-ha-previous-selection-wrapper .smu-ha-cards-item-choose-item');
+const isGloberView = window.location.pathname.includes('glober');
+
 let cardsConfig = {
   'behavior': {
     selector: document.querySelector('#behavior-selector')
@@ -16,6 +21,28 @@ cards.forEach((card) => {
     e.dataTransfer.setData("text/plain", card.id);
   });
 });
+
+if (categoriesList && categoriesList.length > 0) {
+  categoriesList.forEach(category => {
+    category.addEventListener('click', () => {
+      category.classList.toggle('border-blue-cornflower');
+      category.classList.toggle('bg-lavander');
+      category.classList.toggle('smu-ha-category-active');
+    });
+  })
+}
+
+if (categoryWrapper) {
+  categoryWrapper.innerHTML = localStorage.getItem('smu-ha-category-selected');
+}
+
+if (emotionWrapper) {
+  const prefix = isGloberView ? '../' : ''
+  emotionWrapper.innerHTML = `
+    <span class="smu-ha-cards-item-choose-heading">Emotion ${localStorage.getItem('smu-ha-emotion-selected')}</span>
+    <img src="${prefix}assets/emotions/emotion-${localStorage.getItem('smu-ha-emotion-selected')}.svg" alt="">
+  `;
+}
 
 /* boardContent.addEventListener("dragover", (e) => {
   e.preventDefault();
@@ -33,7 +60,7 @@ function drop(ev, el) {
   var dataAction = cartDropped.getAttribute('data-action');
   var isCardsPanel = el.className.includes('smu-ha-cards-item-chooser-card');
   var optionSelected = document.querySelector(`[value="${data}"]`);
-  console.log(el);
+
   if (
     el.className.includes(dataAction) ||
     isCardsPanel
@@ -141,6 +168,13 @@ function openModal(modal) {
 
   if (popup) {
     popup.classList.remove('opened');
+  }
+
+  if (modal === 'completed') {
+    const categorySelected = document.querySelector('.smu-ha-category-active');
+    const emotionSelected = document.querySelector('#smu-ha-modal-request-categories .smu-ha-cards-item-choose.visible').getAttribute('data-id').replace('emotion-', '');
+    localStorage.setItem('smu-ha-category-selected', categorySelected.innerHTML.trim());
+    localStorage.setItem('smu-ha-emotion-selected', emotionSelected);
   }
 }
 

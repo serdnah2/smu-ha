@@ -192,4 +192,18 @@ function closeModal(modal) {
 
 /* ---------- Selec Modal -------------- */
 
+function openDropDownList(ev, dropDownWrapper) {
+  const dropDown = document.querySelector(`#${dropDownWrapper}`);
+  const dropDownList = document.querySelector(`#${dropDownWrapper} .smu-ha-dropdown-list-options`);
+  dropDown.classList.toggle('select-v2--is-menu-open');
+  dropDownList.classList.toggle('select-v2-menu--open');
+}
+
+function selectOption(optionSelected, dropDownWrapper) {
+  const dropDown = document.querySelector(`#${dropDownWrapper}`);
+  const dropDownList = document.querySelector(`#${dropDownWrapper} .smu-ha-dropdown-list-options`);
+  dropDown.classList.toggle('select-v2--is-menu-open');
+  dropDownList.classList.toggle('select-v2-menu--open');
+  console.log(optionSelected);
+}
 

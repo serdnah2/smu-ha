@@ -1221,7 +1221,7 @@
             <div class="space-y-6 p-6">
               <div class="space-y-3">
                 <span class="text-base text-shark font-rubik font-medium leading-4">Who do you want to meet with?</span>
-                <div class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white" name="toUserUid">
+                <div class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white" name="toUserUid" id="smu-ha-dropdown-options">
                   <div class="select-v2__header">
                     <div class="select-v2__wrapper-values">
                       <div class="select-v2__placeholder"> Select a collaborator </div>
@@ -1232,8 +1232,36 @@
                     </div>
                     <div class="select-v2__wrapper-actions">
                       <div class="select-v2__indicator-divider"></div>
-                      <div class="select-v2__indicator-dropdown">
-                        <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon" name="arrow-down" role="presentation"></span>
+                      <div class="select-v2__indicator-dropdown" onclick="openDropDownList(event, 'smu-ha-dropdown-options')">
+                        <span class="ui-components-icon ui-component-icon ui-components-icon_arrow-up ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon smu-ha-disable-event-points" name="arrow-up" role="presentation"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-v2-menu select-v2-menu--size-medium smu-ha-dropdown-list-options" data-testid="menu-selectV2">
+                    <div class="select-v2-menu__option smu-ha-menu-option" onclick="selectOption(1, 'smu-ha-dropdown-options')">
+                      <div class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke smu-ha-disable-event-points">
+                        <div class="flex items-center w-full">
+                          <div class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full" style="height: 32px; width: 32px">
+                            <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/erlitjvupgnvmdqecllp_jpg/32/32/1" />
+                          </div>
+                          <div class="ml-2 flex flex-col overflow-hidden">
+                            <span class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap">Daniel Jaramillo Bustamante</span>
+                            <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="select-v2-menu__option smu-ha-menu-option" onclick="selectOption(2, 'smu-ha-dropdown-options')">
+                      <div class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke smu-ha-disable-event-points">
+                        <div class="flex items-center w-full">
+                          <div class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full" style="height: 32px; width: 32px">
+                            <img class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover" src="https://api.starmeup.com/starmeup-api/v2/image/jLrkCg0sKx_png/40/40/1" />
+                          </div>
+                          <div class="ml-2 flex flex-col overflow-hidden">
+                            <span class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap">Carlos Andrés Cataño Posada</span>
+                            <span class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap">Web UI Developer</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

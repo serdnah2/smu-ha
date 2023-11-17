@@ -639,8 +639,13 @@ padding: 27px;
 }
 
 /* Select */
+.smu-ha-disable-event-points {
+  pointer-events: none;
+}
 
-
+.smu-ha-menu-option {
+  cursor: pointer;
+}
 
 
 

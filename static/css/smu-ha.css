@@ -618,8 +618,8 @@ padding: 27px;
 }
 
 .smu-ha-cards-item {
-  /*width: 228px;*/
-  width: 100%;
+  width: 228px;
+  /* width: 100%; */
   padding-bottom: 42px;
 }
 
@@ -633,6 +633,10 @@ padding: 27px;
   justify-content: center;
   margin-bottom: 35px;
   background: transparent;
+}
+
+.smu-ha-content-categories{
+  width: 670px;
 }
 /* -------close--------- */
 

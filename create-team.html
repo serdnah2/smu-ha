@@ -1578,14 +1578,16 @@
             <div class="bg-white rounded-lg w-[700px]">
               <div class="smu-ha-timeline smu-ha-modal-container">
                 <div class="smu-ha-timeline-times-wrapper">
-                  <div class="smu-ha-timeline-times-wrapper-time selected">1</div>
-                  <div class="smu-ha-timeline-times-wrapper-time ">2</div>
+                  <div class="smu-ha-timeline-times-wrapper-time selected">
+                    1
+                  </div>
+                  <div class="smu-ha-timeline-times-wrapper-time">2</div>
                   <div class="smu-ha-timeline-times-wrapper-time">3</div>
                   <div class="smu-ha-timeline-line smu-ha-line-1-2"></div>
-                    <div class="smu-ha-timeline-line smu-ha-line-2-2"></div>
+                  <div class="smu-ha-timeline-line smu-ha-line-2-2"></div>
                 </div>
               </div>
-              
+
               <div>
                 <div class="flex flex-col p-6">
                   <span
@@ -1604,8 +1606,51 @@
                     class="text-base text-shark font-rubik font-medium leading-4"
                     >Who do you want to meet with?</span
                   >
+
+                  <!-- Buscador -->
+
+                  <!-- Cerrado -->
                   <div
-                    class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white"
+                    class="select-v2 select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white smu-ha-select"
+                    name="toUserUid"
+                  >
+                    <div class="select-v2__header">
+                      <div class="select-v2__wrapper-values">
+                        <div class="select-v2__placeholder">
+                          Select a collaborator
+                        </div>
+                        <div
+                          class="select-v2-search select-v2-search--size-medium"
+                        >
+                          <textarea
+                            aria-autocomplete="list"
+                            autocomplete="off"
+                            autocorrect="off"
+                            class="select-v2-search__input"
+                            spellcheck="false"
+                            type="text"
+                            style="width: 10px; height: 19px"
+                          ></textarea
+                          ><span class="select-v2-search__text"></span>
+                        </div>
+                      </div>
+                      <div class="select-v2__wrapper-actions">
+                        <div class="select-v2__indicator-divider"></div>
+                        <div class="select-v2__indicator-dropdown" onclick="toggleDropdown()">
+                          <span
+                            class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon"
+                            name="arrow-down"
+                            role="presentation"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Cerrado -->
+
+                  <!-- Abierto -->
+                  <div
+                    class="select-v2 select-v2--is-menu-open select-v2--with-ellipsis select-v2--size-medium bg-white w-full bg-white smu-ha-select-active opened"
                     name="toUserUid"
                   >
                     <div class="select-v2__header">
@@ -1632,14 +1677,154 @@
                         <div class="select-v2__indicator-divider"></div>
                         <div class="select-v2__indicator-dropdown">
                           <span
-                            class="ui-components-icon ui-component-icon ui-components-icon_arrow-down ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon"
-                            name="arrow-down"
+                            class="ui-components-icon ui-component-icon ui-components-icon_arrow-up ui-component-icon_small select-v2__indicator-dropdown-icon ui-component-icon_black select-v2__indicator-dropdown-icon"
+                            name="arrow-up"
                             role="presentation"
                           ></span>
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="select-v2-menu select-v2-menu--open select-v2-menu--size-medium"
+                      data-testid="menu-selectV2"
+                    >
+                      <div class="select-v2-menu__option">
+                        <div
+                          class="flex items-center justify-between px-5 py-3 opacity-40"
+                        >
+                          <div class="flex items-center w-full">
+                            <div
+                              class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full"
+                              style="height: 32px; width: 32px"
+                            >
+                              <img
+                                class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover"
+                                src="https://api.starmeup.com/starmeup-api/v2/image/erlitjvupgnvmdqecllp_jpg/32/32/1"
+                              />
+                            </div>
+                            <div class="ml-2 flex flex-col overflow-hidden">
+                              <span
+                                class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Daniel Jaramillo Bustamante</span
+                              ><span
+                                class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Web UI Developer</span
+                              >
+                            </div>
+                          </div>
+                          <span class="text-right text-sm text-shark"
+                            >You already have a 1:1 scheduled</span
+                          >
+                        </div>
+                      </div>
+                      <div class="select-v2-menu__option">
+                        <div
+                          class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke"
+                        >
+                          <div class="flex items-center w-full">
+                            <div
+                              class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full"
+                              style="height: 32px; width: 32px"
+                            >
+                              <img
+                                class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover"
+                                src="https://api.starmeup.com/starmeup-api/v2/image/ufCIwTASpS_png/32/32/1"
+                              />
+                            </div>
+                            <div class="ml-2 flex flex-col overflow-hidden">
+                              <span
+                                class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Julio Cesar Campos Salcedo</span
+                              ><span
+                                class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Web UI Developer</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-v2-menu__option">
+                        <div
+                          class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke"
+                        >
+                          <div class="flex items-center w-full">
+                            <div
+                              class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full"
+                              style="height: 32px; width: 32px"
+                            >
+                              <img
+                                class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover"
+                                src="https://api.starmeup.com/starmeup-api/v2/image/pnyhljkioxjvexxvdvsx_png/32/32/1"
+                              />
+                            </div>
+                            <div class="ml-2 flex flex-col overflow-hidden">
+                              <span
+                                class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Kamilo Alfonso Vasquez Caro</span
+                              ><span
+                                class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Web UI Developer</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-v2-menu__option">
+                        <div
+                          class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke"
+                        >
+                          <div class="flex items-center w-full">
+                            <div
+                              class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full"
+                              style="height: 32px; width: 32px"
+                            >
+                              <img
+                                class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover"
+                                src="https://api.starmeup.com/starmeup-api/v2/image/aghqybdswrvqfdtovtgi_png/32/32/1"
+                              />
+                            </div>
+                            <div class="ml-2 flex flex-col overflow-hidden">
+                              <span
+                                class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Katherine Xiomar Gonzalez Santacruz</span
+                              ><span
+                                class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Web UI Developer</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-v2-menu__option">
+                        <div
+                          class="flex items-center justify-between px-5 py-3 hover:bg-whiteSmoke"
+                        >
+                          <div class="flex items-center w-full">
+                            <div
+                              class="relative flex shrink-0 select-none items-center justify-center overflow-hidden leading-none rounded-full"
+                              style="height: 32px; width: 32px"
+                            >
+                              <img
+                                class="absolute left-0 top-0 right-0 bottom-0 z-0 h-full w-full object-cover"
+                                src="https://api.starmeup.com/starmeup-api/v2/image/WXgCMP5Ln2_png/32/32/1"
+                              />
+                            </div>
+                            <div class="ml-2 flex flex-col overflow-hidden">
+                              <span
+                                class="font-openSans text-sm font-bold text-shark hover:text-shark overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Lehi Quincho Mamani</span
+                              ><span
+                                class="font-openSans text-xs text-raven overflow-hidden text-ellipsis whitespace-nowrap"
+                                >Web UI Developer</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- Abierto -->
                 </div>
                 <div class="space-y-4">
                   <div class="flex items-center justify-between">

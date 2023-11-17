@@ -189,3 +189,7 @@ function closeModal(modal) {
     modalToClose.classList.remove('opened');
   }
 }
+
+/* ---------- Selec Modal -------------- */
+
+

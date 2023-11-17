@@ -33,15 +33,19 @@ if (categoriesList && categoriesList.length > 0) {
 }
 
 if (categoryWrapper) {
-  categoryWrapper.innerHTML = localStorage.getItem('smu-ha-category-selected');
+  if (localStorage.getItem('smu-ha-category-selected')) {
+    categoryWrapper.innerHTML = localStorage.getItem('smu-ha-category-selected');
+  }
 }
 
 if (emotionWrapper) {
-  const prefix = isGloberView ? '../' : ''
-  emotionWrapper.innerHTML = `
-    <span class="smu-ha-cards-item-choose-heading">Emotion ${localStorage.getItem('smu-ha-emotion-selected')}</span>
-    <img src="${prefix}assets/emotions/emotion-${localStorage.getItem('smu-ha-emotion-selected')}.svg" alt="">
-  `;
+  if (localStorage.getItem('smu-ha-emotion-selected') && localStorage.getItem('smu-ha-emotion-selected')) {
+    const prefix = isGloberView ? '../' : '';
+    emotionWrapper.innerHTML = `
+      <span class="smu-ha-cards-item-choose-heading">Emotion ${localStorage.getItem('smu-ha-emotion-selected')}</span>
+      <img src="${prefix}assets/emotions/emotion-${localStorage.getItem('smu-ha-emotion-selected')}.svg" alt="">
+    `;
+  }
 }
 
 /* boardContent.addEventListener("dragover", (e) => {

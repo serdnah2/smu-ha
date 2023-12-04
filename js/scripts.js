@@ -39,10 +39,12 @@ if (categoryWrapper) {
 }
 
 if (emotionWrapper) {
+  const emotions = ['Happy', 'Love', 'Surprise', 'Sad', 'Optimistic', 'Angry'];
   if (localStorage.getItem('smu-ha-emotion-selected') && localStorage.getItem('smu-ha-emotion-selected')) {
     const prefix = isGloberView ? '../' : '';
+    let emotionSelected = Int(localStorage.getItem('smu-ha-emotion-selected')) || 0;
     emotionWrapper.innerHTML = `
-      <span class="smu-ha-cards-item-choose-heading">Emotion ${localStorage.getItem('smu-ha-emotion-selected')}</span>
+      <span class="smu-ha-cards-item-choose-heading">${emotions[emotionSelected]}</span>
       <img src="${prefix}assets/emotions/emotion-${localStorage.getItem('smu-ha-emotion-selected')}.svg" alt="">
     `;
   }

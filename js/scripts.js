@@ -109,6 +109,19 @@ function selectorUpdated(event, chooser) {
   if (cardToSelect) {
     currentCard.classList.remove('visible');
     cardToSelect.classList.add('visible');
+
+    if (chooser === 'behavior') {
+      const descriptionToShow = document.querySelector(`[data-description-id="${event.target.value}"]`);
+      const descriptionToHide = document.querySelector(`.smu-ha-card-description.visible`);
+
+      if (descriptionToShow) {
+        descriptionToShow.classList.add('visible');
+      }
+
+      if (descriptionToHide) {
+        descriptionToHide.classList.remove('visible');
+      }
+    }
   }
 }
 
@@ -121,6 +134,19 @@ function nextCard(chooser) {
     currentCard.classList.remove('visible');
     nextCard.classList.add('visible');
     cardsConfig[chooser].selector.value = nextCard.getAttribute('data-id');
+
+    if (chooser === 'behavior') {
+      const descriptionToShow = document.querySelector(`[data-description-id="${nextCard.getAttribute('data-id')}"]`);
+      const descriptionToHide = document.querySelector(`[data-description-id="${currentCard.getAttribute('data-id')}"]`);
+
+      if (descriptionToShow) {
+        descriptionToShow.classList.add('visible');
+      }
+
+      if (descriptionToHide) {
+        descriptionToHide.classList.remove('visible');
+      }
+    }
   }
 }
 
@@ -133,6 +159,19 @@ function prevCard(chooser) {
     currentCard.classList.remove('visible');
     prevCard.classList.add('visible');
     cardsConfig[chooser].selector.value = prevCard.getAttribute('data-id');
+
+    if (chooser === 'behavior') {
+      const descriptionToShow = document.querySelector(`[data-description-id="${prevCard.getAttribute('data-id')}"]`);
+      const descriptionToHide = document.querySelector(`[data-description-id="${currentCard.getAttribute('data-id')}"]`);
+
+      if (descriptionToShow) {
+        descriptionToShow.classList.add('visible');
+      }
+
+      if (descriptionToHide) {
+        descriptionToHide.classList.remove('visible');
+      }
+    }
   }
 }
 

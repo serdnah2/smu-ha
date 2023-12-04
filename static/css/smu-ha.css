@@ -224,6 +224,18 @@
   right: 0;
 }
 
+.smu-ha-card-description {
+  display: none;
+  background: var(--white-color-light);
+  padding: 16px 13px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.smu-ha-card-description.visible {
+  display: block;
+}
+
 .smu-ha-selector {
   display: flex;
   justify-content: center;

@@ -82,6 +82,21 @@ function drop(ev, el) {
       newCurrentCard.classList.add('visible');
       cartDropped.classList.remove('visible');
       cardsConfig[dataAction].selector.value = newCurrentCard.getAttribute('data-id');
+
+
+      if (dataAction === 'behavior') {
+        const descriptionToShow = document.querySelector(`[data-description-id="${newCurrentCard.getAttribute('data-id')}"]`);
+        const descriptionToHide = document.querySelector(`.smu-ha-card-description.visible`);
+
+        if (descriptionToShow) {
+          descriptionToShow.classList.add('visible');
+        }
+
+        if (descriptionToHide) {
+          descriptionToHide.classList.remove('visible');
+        }
+      }
+
     }
   } else {
     console.log('NO se puede mover aca');
